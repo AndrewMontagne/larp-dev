@@ -1,8 +1,8 @@
-.PHONY: build
+.PHONY: build sh
 
 run: build
 	-docker rm -f dev
-	docker run -d --rm -p 8080:80 --name dev andrewmontagne/lap-stack:latest
+	docker run -d --rm --mount type=bind,source=$(HOME)/dev,target=/app -p80:80 --name dev andrewmontagne/lap-stack:latest
 
 sh:
 	docker exec -it dev /bin/bash
