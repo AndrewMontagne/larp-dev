@@ -2,7 +2,7 @@ build:
   tags:
     - shell-runner
   script:
-    - docker build . --squash -t andrewmontagne/larp-stack:$CI_COMMIT_SHORT_SHA
-    - docker push andrewmontagne/larp-stack:$CI_COMMIT_SHORT_SHA
-    - docker tag andrewmontagne/larp-stack:$CI_COMMIT_SHORT_SHA andrewmontagne/larp-stack:$CI_COMMIT_BRANCH
-    - docker push andrewmontagne/larp-stack:$CI_COMMIT_BRANCH
+    - docker build . --squash -t andrewmontagne/larp-dev:$CI_COMMIT_SHORT_SHA
+    - docker push andrewmontagne/larp-dev:$CI_COMMIT_SHORT_SHA
+    - docker tag andrewmontagne/larp-dev:$CI_COMMIT_SHORT_SHA andrewmontagne/larp-dev:$CI_COMMIT_BRANCH
+    - docker push andrewmontagne/larp-dev:$CI_COMMIT_BRANCH
